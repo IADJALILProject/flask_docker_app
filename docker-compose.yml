@@ -1,0 +1,96 @@
+version: '3.8'
+
+services:
+  # 🔹 Application Flask
+  web:
+    environment:
+      - POSTGRES_USER=flaskuser
+      - POSTGRES_PASSWORD=flaskpass
+      - POSTGRES_DB=flaskdb
+      - POSTGRES_HOST=db
+      - POSTGRES_PORT=5432
+    build: .
+    ports:
+      - "5000:5000"
+    volumes:
+      - .:/app
+    env_file:
+      - .env
+    depends_on:
+      - db
+    restart: always
+
+  # 🔹 Base de données PostgreSQL (partagée)
+  db:
+    image: postgres:15
+    restart: always
+    env_file:
+      - .env
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  # 🔹 Initialisation Airflow (exécutée une fois)
+  airflow-init:
+    build:
+      context: ./airflow
+      dockerfile: Dockerfile
+    entrypoint: >
+      bash -c "
+        airflow db migrate &&
+        airflow users create --username admin --password admin --firstname Admin --lastname User --role Admin --email admin@example.com
+      "
+    restart: "no"
+    env_file:
+      - .env
+    environment:
+      - AIRFLOW__CORE__EXECUTOR=SequentialExecutor
+      - AIRFLOW__CORE__FERNET_KEY=${AIRFLOW__CORE__FERNET_KEY}
+      - AIRFLOW__WEBSERVER__SECRET_KEY=${AIRFLOW__WEBSERVER__SECRET_KEY}
+      - AIRFLOW__DATABASE__SQL_ALCHEMY_CONN=postgresql+psycopg2://${POSTGRES_USER}:${POSTGRES_PASSWORD}@db:5432/${POSTGRES_DB}
+    depends_on:
+      - db
+    volumes:
+      - ./airflow/dags:/opt/airflow/dags
+
+  # 🔹 Webserver Airflow
+  airflow-webserver:
+    build:
+      context: ./airflow
+      dockerfile: Dockerfile
+    restart: always
+    depends_on:
+      - airflow-init
+    env_file:
+      - .env
+    ports:
+      - "8080:8080"
+    environment:  
+      - AIRFLOW__CORE__FERNET_KEY=${AIRFLOW__CORE__FERNET_KEY}
+      - AIRFLOW__WEBSERVER__SECRET_KEY=${AIRFLOW__WEBSERVER__SECRET_KEY}
+      - AIRFLOW__DATABASE__SQL_ALCHEMY_CONN=postgresql+psycopg2://${POSTGRES_USER}:${POSTGRES_PASSWORD}@db:5432/${POSTGRES_DB}
+    volumes:
+      - ./airflow/dags:/opt/airflow/dags
+    command: airflow webserver
+
+  # 🔹 Scheduler Airflow
+  airflow-scheduler:
+    build:
+      context: ./airflow
+      dockerfile: Dockerfile
+    restart: always
+    depends_on:
+      - airflow-init
+    env_file:
+      - .env
+    environment:
+      - AIRFLOW__DATABASE__SQL_ALCHEMY_CONN=postgresql+psycopg2://${POSTGRES_USER}:${POSTGRES_PASSWORD}@db:5432/${POSTGRES_DB}
+      - AIRFLOW__CORE__FERNET_KEY=${AIRFLOW__CORE__FERNET_KEY}
+      - AIRFLOW__WEBSERVER__SECRET_KEY=${AIRFLOW__WEBSERVER__SECRET_KEY}
+    volumes:
+      - ./airflow/dags:/opt/airflow/dags
+    command: airflow scheduler
+
+volumes:
+  postgres_data:
+
+

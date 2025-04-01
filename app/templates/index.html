@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Users - Flask + PostgreSQL</title>
+</head>
+<body>
+    <h1>Liste des utilisateurs</h1>
+    <ul>
+        <!-- Afficher la liste des utilisateurs -->
+        {% for user in users %}
+            <li>{{ user.name }}</li>
+        {% endfor %}
+    </ul>
+
+    <p>
+      <a href="/export-csv">⬇️ Exporter les utilisateurs en CSV</a>
+    </p>
+
+    <h2>Ajouter un utilisateur</h2>
+    <form method="POST" action="/add-user">
+        <input type="text" name="name" placeholder="Nom" required>
+        <button type="submit">Ajouter</button>
+    </form>
+
+    <p>
+      <a href="/dashboard/">Voir le Dashboard Interactif</a>
+    </p>
+</body>
+</html>

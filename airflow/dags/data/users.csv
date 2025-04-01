@@ -1,0 +1,101 @@
+name,email,age,country,city,signup_date,last_login,is_active,subscription_type,monthly_spend
+Donald Walker,garzaanthony@robinson.org,33,USA,New York,2024-08-09,2024-09-21,False,Free,0.0
+Matthew Gardner,zlawrence@blake.biz,55,India,Mumbai,2023-04-21,2024-06-29,True,Basic,185.44
+Tyler Rogers,wdavis@baker.com,23,Japan,Tokyo,2023-12-21,2024-07-23,True,Free,0.0
+Edward Fuller,janetwilliams@gmail.com,53,India,Mumbai,2025-03-17,2025-03-26,True,Basic,128.81
+Dr. Sharon James,francisco53@hotmail.com,18,India,Mumbai,2024-11-21,2025-01-16,False,Enterprise,59.01
+Mark Ferguson,stevennelson@watts.com,31,Germany,Berlin,2023-10-25,2025-03-11,True,Enterprise,88.36
+Jennifer Jones,dianafoster@hotmail.com,42,Brazil,Sao Paulo,2023-09-25,2023-10-19,True,Free,0.0
+David Hoffman,zhurst@yahoo.com,20,USA,New York,2024-03-22,2024-05-16,False,Premium,212.64
+Ann Williams,courtneyconner@carlson-cruz.org,23,Spain,Barcelona,2023-09-18,2024-01-03,False,Free,0.0
+Juan Dunlap,kayla51@graham-chavez.com,54,Italy,Rome,2024-03-29,2024-10-20,False,Premium,208.2
+Thomas Harrell,ericfarmer@hotmail.com,60,India,Mumbai,2024-04-23,2025-02-12,True,Free,0.0
+Linda Burns,natasha43@allen.com,24,India,Mumbai,2024-11-25,2025-03-07,True,Premium,246.38
+Mr. Philip Cannon,karroyo@rose-obrien.com,28,Japan,Tokyo,2023-06-06,2024-12-25,False,Premium,116.09
+Melissa Marquez,samuel87@gmail.com,62,Brazil,Sao Paulo,2025-03-22,2025-03-28,False,Premium,56.33
+Alex Spencer,jonescrystal@jones.com,28,USA,New York,2023-10-10,2024-04-01,True,Basic,135.86
+Michael Lewis,esanchez@lee-davis.biz,61,Spain,Barcelona,2023-05-26,2024-06-28,True,Enterprise,71.14
+Scott Brown,powellmatthew@wright.net,20,Brazil,Sao Paulo,2024-01-01,2024-11-25,True,Free,0.0
+Donald Wright,jmorton@williams.com,54,Brazil,Sao Paulo,2024-03-14,2024-05-07,True,Enterprise,70.6
+Carol Tucker,kbarrera@smith-myers.info,59,Brazil,Sao Paulo,2023-06-12,2025-01-17,False,Basic,165.58
+Monica Logan,jamesrobinson@gmail.com,65,Spain,Barcelona,2023-11-08,2024-10-01,True,Basic,69.9
+Erik Williams,brianromero@gmail.com,55,Italy,Rome,2024-06-23,2025-01-19,False,Premium,188.02
+Scott Powell,harveyrobert@cunningham.com,50,Japan,Tokyo,2023-05-24,2024-08-28,True,Premium,58.73
+Michael Evans,smithchristine@hotmail.com,25,Spain,Barcelona,2023-10-03,2024-04-26,True,Free,0.0
+Katie Anderson,suarezmike@gmail.com,56,Germany,Berlin,2023-06-17,2023-08-12,False,Basic,199.06
+Victoria Valdez,sarah12@wilson-rodriguez.net,51,USA,New York,2024-03-06,2024-10-26,False,Enterprise,98.5
+Daniel Cooper,dking@gmail.com,61,Canada,Toronto,2023-07-30,2024-02-26,True,Free,0.0
+Amanda Cook,evan78@patterson.com,25,Italy,Rome,2024-08-05,2025-01-16,False,Premium,193.31
+Lauren Hernandez,parkerrachel@nolan.com,64,Canada,Toronto,2024-05-28,2024-06-10,True,Enterprise,43.75
+Justin Baxter,michellecherry@keith.com,58,Canada,Toronto,2024-08-31,2024-10-09,True,Basic,129.38
+Jennifer Santiago,erik16@garrison.com,52,Canada,Toronto,2024-10-24,2024-12-27,True,Basic,42.45
+Eric Pope,andrewlee@ramirez-jones.com,49,Italy,Rome,2024-12-25,2025-03-24,False,Free,0.0
+William Herrera,wileyjose@estes.biz,37,France,Paris,2023-12-29,2025-01-27,False,Free,0.0
+William Wilson,bradley60@frost.com,54,India,Mumbai,2023-12-25,2024-08-24,True,Free,0.0
+Matthew Rivera,cortezkevin@yahoo.com,22,USA,New York,2024-01-08,2024-12-07,False,Free,0.0
+Michael Spencer,yortega@adkins.biz,53,Italy,Rome,2024-08-30,2025-02-04,False,Basic,36.46
+Daniel Floyd,rramos@gmail.com,31,Germany,Berlin,2024-05-30,2024-05-30,False,Premium,134.28
+Toni Fitzgerald,zachary95@cardenas.com,60,Italy,Rome,2024-05-02,2024-11-01,False,Basic,179.67
+Angel Riggs,operry@lee.com,25,Brazil,Sao Paulo,2023-09-22,2024-02-23,False,Enterprise,225.41
+Stephanie Dalton,zrobinson@holmes.com,55,India,Mumbai,2023-07-24,2024-12-14,True,Basic,20.69
+Mary Travis,usalazar@hotmail.com,22,Italy,Rome,2024-03-20,2024-05-10,True,Basic,149.17
+Natasha Wells,maryramirez@hotmail.com,39,France,Paris,2024-02-26,2025-02-06,True,Basic,21.51
+Jeremiah Reeves,matthew81@hernandez.com,31,USA,New York,2024-04-11,2024-12-10,False,Basic,73.23
+Jason Daniels,clarkrobert@hotmail.com,33,Italy,Rome,2024-09-30,2024-11-10,False,Basic,182.22
+Pamela James,kenneth66@adkins.com,60,Spain,Barcelona,2024-09-22,2024-09-25,True,Enterprise,51.65
+John Price,marycalhoun@hotmail.com,64,Japan,Tokyo,2024-04-14,2024-07-08,False,Premium,108.78
+Leslie Alvarado,dtaylor@williams.com,43,France,Paris,2024-05-19,2024-05-29,True,Free,0.0
+Philip Gray,mary70@hotmail.com,30,Brazil,Sao Paulo,2023-09-12,2024-08-30,True,Free,0.0
+Mrs. Marie Harrington DDS,jamessmith@allen.com,35,India,Mumbai,2024-05-23,2024-06-12,True,Enterprise,39.34
+David Wood,tamirodriguez@hickman.biz,46,Spain,Barcelona,2024-06-12,2024-09-04,True,Basic,219.25
+Michael Burton,melissa91@patton.com,59,Italy,Rome,2024-02-03,2024-07-06,True,Free,0.0
+Alexandria Fisher,hamiltonmichael@yahoo.com,33,Italy,Rome,2023-05-24,2024-06-19,True,Free,0.0
+Nicholas Sheppard,umarshall@hotmail.com,43,Germany,Berlin,2024-10-01,2024-10-30,True,Enterprise,123.98
+Sandra Miller,karenhudson@hotmail.com,34,France,Paris,2023-10-26,2024-07-02,False,Basic,97.85
+Samuel White,lauren54@haynes.com,27,Spain,Barcelona,2024-01-20,2024-10-07,False,Premium,108.64
+Katherine Chang,bwest@gmail.com,55,India,Mumbai,2023-06-06,2023-12-10,True,Premium,58.34
+David Beck,wtran@yahoo.com,21,Italy,Rome,2023-11-15,2024-05-05,False,Free,0.0
+Michael Nelson,davidlee@gmail.com,21,France,Paris,2024-10-31,2025-02-14,True,Enterprise,128.2
+Melissa Lee,jenny89@yahoo.com,22,Italy,Rome,2024-10-29,2025-02-10,True,Free,0.0
+Darren White,joshuamccann@carter.info,43,Algeria,Algiers,2023-06-18,2025-03-25,True,Free,0.0
+Julie Alexander,kingmichelle@short.info,57,USA,New York,2023-06-19,2023-06-28,True,Basic,146.84
+Amy Hernandez,mcknightdavid@yahoo.com,34,USA,New York,2023-05-28,2024-08-18,False,Enterprise,166.06
+Courtney Mills,levans@yahoo.com,26,India,Mumbai,2024-07-14,2025-03-02,False,Premium,63.48
+Lisa Singh,josephmiller@thompson.com,18,Canada,Toronto,2023-11-24,2025-02-07,True,Enterprise,82.46
+Kirk Carter,jasmine71@hall.org,52,Spain,Barcelona,2023-04-03,2024-02-14,True,Free,0.0
+Joshua Holland,charlesmartin@yahoo.com,22,India,Mumbai,2024-08-26,2024-11-10,False,Premium,37.45
+Jessica Harrison,gbender@hotmail.com,52,India,Mumbai,2024-07-06,2025-02-12,False,Premium,74.82
+Andrew Reynolds,anthony39@hotmail.com,60,Canada,Toronto,2024-04-18,2024-10-05,False,Free,0.0
+Debra Williams,cstone@white-richards.info,65,USA,New York,2023-04-17,2024-12-01,True,Basic,69.79
+Gary Santiago,robert74@landry.info,63,Italy,Rome,2023-06-10,2024-06-09,True,Basic,71.73
+Brian Barton,mgutierrez@cox.com,50,Brazil,Sao Paulo,2023-06-08,2024-02-07,False,Basic,173.44
+Tanya Kim,johnsoncrystal@gmail.com,23,Spain,Barcelona,2023-09-06,2024-03-31,True,Premium,226.81
+Adam Russell,murraydavid@jimenez.com,26,Japan,Tokyo,2024-10-03,2024-11-02,False,Premium,15.8
+Ruben Baird,yarnold@weeks.com,53,Canada,Toronto,2024-04-30,2025-01-28,False,Basic,186.6
+Richard Perry,campbellkenneth@hotmail.com,62,France,Paris,2025-01-31,2025-02-06,True,Free,0.0
+Charles Ryan MD,mcantu@hotmail.com,55,Germany,Berlin,2024-06-24,2025-03-07,False,Free,0.0
+Scott Jenkins,zthornton@yahoo.com,37,Italy,Rome,2023-10-03,2024-12-20,True,Basic,110.3
+Andrew Shaw MD,dgarcia@bowen.com,31,Brazil,Sao Paulo,2024-01-25,2024-05-22,False,Free,0.0
+Deborah Hanson,christianmelissa@hotmail.com,53,India,Mumbai,2023-05-29,2024-05-27,False,Free,0.0
+Stacy Freeman,younggabrielle@bright-francis.biz,28,Japan,Tokyo,2024-01-21,2024-09-22,True,Basic,231.81
+Shelia Wallace,williamslaura@yahoo.com,44,Germany,Berlin,2023-06-16,2025-01-26,False,Enterprise,11.07
+David Jenkins,gregorylynch@harvey-allen.org,42,India,Mumbai,2024-01-04,2024-10-21,True,Premium,44.0
+David Scott,rsantana@moore.org,40,France,Paris,2023-07-21,2024-01-17,False,Enterprise,59.5
+Melissa Bryant,yvonnecastaneda@gmail.com,43,Canada,Toronto,2023-11-19,2025-03-29,True,Basic,59.62
+Laura Haney,spencedominique@yahoo.com,40,Brazil,Sao Paulo,2023-10-02,2024-07-24,False,Premium,216.77
+Paula Beltran,kimberly39@yahoo.com,19,Italy,Rome,2023-04-07,2024-06-19,False,Enterprise,171.48
+David Campos,bergerdebbie@kramer-johnson.com,20,USA,New York,2023-09-18,2025-01-24,False,Premium,48.75
+Edward Burgess,davidryan@schmidt-mcintyre.com,45,USA,New York,2024-10-20,2024-11-14,False,Enterprise,89.69
+Elizabeth Harrell,jmccarty@dalton.biz,54,Algeria,Algiers,2023-10-17,2024-10-25,False,Free,0.0
+Richard Smith,vrichardson@baker.com,18,India,Mumbai,2025-01-16,2025-03-11,False,Premium,15.87
+Alexander Henson,deborahreid@yahoo.com,60,Italy,Rome,2023-06-24,2024-11-29,True,Basic,94.23
+Audrey Williams,wendy11@clay.biz,64,Brazil,Sao Paulo,2025-03-07,2025-03-21,True,Premium,167.53
+Natalie Bautista,nicolepena@yahoo.com,43,Canada,Toronto,2024-03-18,2024-08-09,False,Premium,168.39
+Diana Vaughn,pwallace@garcia-jennings.net,61,Canada,Toronto,2024-07-22,2024-12-27,False,Basic,52.0
+Donald Donaldson,batesdarlene@hotmail.com,37,Germany,Berlin,2025-03-01,2025-03-18,True,Premium,104.49
+Dana Martinez,gallegosangela@robinson.com,47,Canada,Toronto,2023-04-17,2023-05-26,False,Basic,110.32
+Scott Thomas,lauren10@smith.org,65,Spain,Barcelona,2024-12-03,2025-03-28,False,Enterprise,170.53
+Anthony Harmon,alvarezkimberly@wheeler.org,50,Germany,Berlin,2023-12-08,2023-12-20,False,Free,0.0
+Sharon Boyd,browntimothy@yahoo.com,61,Algeria,Algiers,2023-05-04,2024-11-18,True,Premium,27.88
+Theodore Jones Jr.,martinezclaudia@kelley.net,19,Canada,Toronto,2024-02-26,2024-05-19,True,Basic,202.61
+Jessica Mcguire,russellbeasley@morgan-chavez.biz,47,France,Paris,2023-11-16,2024-11-02,True,Basic,246.06

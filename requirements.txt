@@ -1,0 +1,12 @@
+Flask
+Flask-SQLAlchemy
+Flask-Migrate
+Flask-Login
+dash
+dash-bootstrap-components
+pandas
+sqlalchemy
+psycopg2-binary
+plotly
+python-dotenv
+requests
