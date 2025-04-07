@@ -15,9 +15,13 @@ def home():
     return render_template("index.html")
 
 @main.route("/init-db")
-def init_db():
-    db.create_all()
-    return "Database initialized!"
+def check_users_csv():
+    try:
+        result = db.session.execute(text("SELECT COUNT(*) FROM users_csv"))
+        count = result.scalar()
+        return jsonify({"status": "ok", "message": f"Table users_csv contient {count} lignes."})
+    except Exception as e:
+        return jsonify({"status": "error", "message": str(e)})
 
 @main.route("/users", methods=["GET"])
 def get_users():

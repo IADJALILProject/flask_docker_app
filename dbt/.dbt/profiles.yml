@@ -1,0 +1,12 @@
+dbt_project:
+  target: dev
+  outputs:
+    dev:
+      type: postgres
+      host: db
+      user: flaskuser
+      password: flaskpass
+      port: 5432
+      dbname: flaskdb
+      schema: public
+      threads: 1

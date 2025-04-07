@@ -1,0 +1,10 @@
+version: 2
+
+models:
+  - name: users_analytics
+    description: "Vue analytique agrégée des utilisateurs"
+    columns:
+      - name: user_count
+        tests:
+          - not_null
+      

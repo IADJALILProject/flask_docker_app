@@ -70,7 +70,11 @@ services:
       - AIRFLOW__DATABASE__SQL_ALCHEMY_CONN=postgresql+psycopg2://${POSTGRES_USER}:${POSTGRES_PASSWORD}@db:5432/${POSTGRES_DB}
     volumes:
       - ./airflow/dags:/opt/airflow/dags
+      - ./dbt:/dbt                # <-- Ajouté
+      - ./dbt/.dbt:/root/.dbt
+      - ./spark:/spark 
     command: airflow webserver
+    
 
   # 🔹 Scheduler Airflow
   airflow-scheduler:
@@ -86,11 +90,117 @@ services:
       - AIRFLOW__DATABASE__SQL_ALCHEMY_CONN=postgresql+psycopg2://${POSTGRES_USER}:${POSTGRES_PASSWORD}@db:5432/${POSTGRES_DB}
       - AIRFLOW__CORE__FERNET_KEY=${AIRFLOW__CORE__FERNET_KEY}
       - AIRFLOW__WEBSERVER__SECRET_KEY=${AIRFLOW__WEBSERVER__SECRET_KEY}
+    user: root
     volumes:
       - ./airflow/dags:/opt/airflow/dags
+      - ./dbt:/dbt                # <-- Ajouté
+      - ./dbt/.dbt:/root/.dbt
+      - ./spark:/spark 
+      - /var/run/docker.sock:/var/run/docker.sock  # <--- nécessaire !
     command: airflow scheduler
+    
+  dbt:
+    container_name: flask_docker_app-dbt-1
+    build:
+      context: ./dbt
+      dockerfile: Dockerfile
+    volumes:
+    - ./dbt:/dbt  # ton projet dbt
+    - ./dbt/.dbt:/root/.dbt  # ton fichier profiles.yml monté dans le bon dossier
+    working_dir: /dbt/dbt_project
+    ports:
+      - "8082:8082"
+    environment:
+      - DBT_PROFILES_DIR=/root/.dbt
+      - DBT_PROJECT_DIR=/dbt/dbt_project
+      - DBT_USER=${POSTGRES_USER}
+      - DBT_PASSWORD=${POSTGRES_PASSWORD}
+      - DBT_HOST=db
+      - DBT_PORT=5432
+      - DBT_DATABASE=${POSTGRES_DB}
+    entrypoint: ["tail", "-f", "/dev/null"]
+    depends_on:
+    - db
+  
+  spark:
+    container_name: spark_app
+    build:
+      context: ./spark
+      dockerfile: Dockerfile
+    volumes:
+      - ./airflow/dags/data:/opt/data
+      - ./spark:/opt/spark_jobs
+      - ./dbt:/dbt
+      - ./dbt/.dbt:/root/.dbt
+    working_dir: /opt/spark_jobs
+    ports:
+      - "4040:4040"
+    command: tail -f /dev/null
+    networks:
+      - spark-net
+      - default               # ✅ Ajouté
+    depends_on:              # ✅ Ajouté
+      - db
+    environment:
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_DB=${POSTGRES_DB}
+      - POSTGRES_HOST=${POSTGRES_HOST}
+      - POSTGRES_PORT=${POSTGRES_PORT}
+
+  spark-master:
+    image: bitnami/spark:latest
+    container_name: spark_master
+    environment:
+      - SPARK_MODE=master
+    ports:
+      - "7077:7077"
+      - "8088:8088"
+    volumes:
+      - ./spark:/opt/spark_jobs
+      - ./airflow/dags/data:/opt/data
+    working_dir: /opt/spark_jobs/jobs   
+    command: tail -f /dev/null
+    networks:
+      - spark-net
+
+  spark-worker:
+    image: bitnami/spark:latest
+    container_name: spark_worker
+    environment:
+      - SPARK_MODE=worker
+      - SPARK_MASTER_URL=spark://spark_master:7077
+    depends_on:
+      - spark-master
+    volumes:
+      - ./spark:/opt/spark_jobs
+      - ./airflow/dags/data:/opt/data
+    working_dir: /opt/spark_jobs/jobs    
+    command: tail -f /dev/null
+    networks:
+      - spark-net
+
+  pgadmin:
+    image: dpage/pgadmin4
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+    ports:
+      - "8888:80"
+    depends_on:
+      - db
+
 
 volumes:
   postgres_data:
+
+networks:
+  spark-net:
+    driver: bridge
+  default:                  # ✅ Réseau partagé implicite
+    driver: bridge
+
+
 
 
