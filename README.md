@@ -1,4 +1,3 @@
-📘 README (ID 5) — Flask Docker App — Micro-service data/ML (CI, pytest, k8s, Prom/Graf)
 1) Objectifs
 
 Exposer un modèle/logiciel data/ML via API Flask dockerisée, testée pytest, déployable Kubernetes, observable Prometheus/Grafana.
